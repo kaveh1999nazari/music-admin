@@ -20,6 +20,6 @@ RUN composer install
 
 RUN chown -R www-data:www-data /music-admin
 
-EXPOSE 9000
+EXPOSE 8086
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8086"]
