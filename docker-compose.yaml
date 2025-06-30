@@ -13,3 +13,5 @@ services:
 
 networks:
   music-network:
+    external: true
+    name: music-player_music-network
