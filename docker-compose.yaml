@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/MusicAdmin/Dockerfile
+    container_name: music_admin_app
+    volumes:
+      - .:/music-admin
+    ports:
+      - "8086:8086"
+    networks:
+      - music-network
+
+networks:
+  music-network:
