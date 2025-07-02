@@ -20,6 +20,11 @@ RUN composer install
 
 RUN chown -R www-data:www-data /music-admin
 
+COPY /docker/bootstrap/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 EXPOSE 8086
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8086"]
